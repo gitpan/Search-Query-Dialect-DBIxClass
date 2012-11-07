@@ -39,7 +39,7 @@
       },
       "test" : {
          "requires" : {
-            "Test::DBIx::Class" : "0.34",
+            "Test::DBIx::Class" : "0.35",
             "Test::More" : "0.98"
          }
       }
@@ -52,10 +52,10 @@
          "web" : "http://git.mon.dsh.at/NAC-SAM.git/"
       }
    },
-   "version" : "0.001",
+   "version" : "0.002",
    "x_Dist_Zilla" : {
       "perl" : {
-         "version" : "5.016001"
+         "version" : "5.016002"
       },
       "plugins" : [
          {

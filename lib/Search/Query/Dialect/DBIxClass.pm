@@ -1,6 +1,6 @@
 package Search::Query::Dialect::DBIxClass;
 {
-  $Search::Query::Dialect::DBIxClass::VERSION = '0.001';
+  $Search::Query::Dialect::DBIxClass::VERSION = '0.002';
 }
 
 # ABSTRACT: Search::Query dialect for simple DBIx::Class query generation
@@ -81,7 +81,7 @@ sub _dbic_op {
     elsif ( $op eq '!~' ) {
         return _wrap_dbic_ops(
             map {
-                \[  "LOWER($_) NOT LIKE ?",
+                \[  "COALESCE( LOWER($_), '' ) NOT LIKE ?",
                     [ plain_value => "%$clause->{value}%" ]
                     ]
             } @$colnames
@@ -172,7 +172,7 @@ Search::Query::Dialect::DBIxClass - Search::Query dialect for simple DBIx::Class
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 SYNOPSIS
 
