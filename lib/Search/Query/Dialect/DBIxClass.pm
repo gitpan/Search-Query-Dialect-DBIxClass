@@ -1,6 +1,6 @@
 package Search::Query::Dialect::DBIxClass;
 {
-  $Search::Query::Dialect::DBIxClass::VERSION = '0.002';
+  $Search::Query::Dialect::DBIxClass::VERSION = '0.003';
 }
 
 # ABSTRACT: Search::Query dialect for simple DBIx::Class query generation
@@ -172,7 +172,7 @@ Search::Query::Dialect::DBIxClass - Search::Query dialect for simple DBIx::Class
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 

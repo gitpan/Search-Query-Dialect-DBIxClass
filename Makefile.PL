@@ -12,6 +12,7 @@ my %WriteMakefileArgs = (
   "ABSTRACT" => "Search::Query dialect for simple DBIx::Class query generation",
   "AUTHOR" => "Alexander Hartmaier <abraxxa\@cpan.org>",
   "BUILD_REQUIRES" => {
+    "Config::General" => "2.51",
     "Test::DBIx::Class" => "0.35",
     "Test::More" => "0.98"
   },
@@ -25,7 +26,7 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Search::Query" => "0.21"
   },
-  "VERSION" => "0.002",
+  "VERSION" => "0.003",
   "test" => {
     "TESTS" => "t/*.t"
   }

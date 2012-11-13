@@ -1,7 +1,7 @@
 
 
 This archive contains the distribution Search-Query-Dialect-DBIxClass,
-version 0.002:
+version 0.003:
 
   Search::Query dialect for simple DBIx::Class query generation
 

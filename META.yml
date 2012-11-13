@@ -3,6 +3,7 @@ abstract: 'Search::Query dialect for simple DBIx::Class query generation'
 author:
   - 'Alexander Hartmaier <abraxxa@cpan.org>'
 build_requires:
+  Config::General: 2.51
   Test::DBIx::Class: 0.35
   Test::More: 0.98
 configure_requires:
@@ -20,8 +21,8 @@ no_index:
 requires:
   Search::Query: 0.21
 resources:
-  repository: ssh://git.mon.dsh.at/opt2/git/NAC-SAM.git
-version: 0.002
+  repository: https://github.com/abraxxa/Search-Query-Dialect-DBIxClass.git
+version: 0.003
 x_Dist_Zilla:
   perl:
     version: 5.016002

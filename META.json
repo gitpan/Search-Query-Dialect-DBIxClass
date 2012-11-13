@@ -39,6 +39,7 @@
       },
       "test" : {
          "requires" : {
+            "Config::General" : "2.51",
             "Test::DBIx::Class" : "0.35",
             "Test::More" : "0.98"
          }
@@ -48,11 +49,11 @@
    "resources" : {
       "repository" : {
          "type" : "git",
-         "url" : "ssh://git.mon.dsh.at/opt2/git/NAC-SAM.git",
-         "web" : "http://git.mon.dsh.at/NAC-SAM.git/"
+         "url" : "https://github.com/abraxxa/Search-Query-Dialect-DBIxClass.git",
+         "web" : "https://github.com/abraxxa/Search-Query-Dialect-DBIxClass"
       }
    },
-   "version" : "0.002",
+   "version" : "0.003",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.016002"
