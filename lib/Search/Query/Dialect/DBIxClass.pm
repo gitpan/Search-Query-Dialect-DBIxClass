@@ -1,6 +1,6 @@
 package Search::Query::Dialect::DBIxClass;
 {
-  $Search::Query::Dialect::DBIxClass::VERSION = '0.003';
+  $Search::Query::Dialect::DBIxClass::VERSION = '0.004';
 }
 
 # ABSTRACT: Search::Query dialect for simple DBIx::Class query generation
@@ -35,7 +35,8 @@ sub init {
 
     $self->SUPER::init(@_);
 
-    $self->parser->{op_regex} = qr/${$self->parser->{op_regex}}|!#/;
+    my $op_regex = $self->parser->{op_regex};
+    $self->parser->{op_regex} = qr/$op_regex|!#/;
 
     return $self;
 }
@@ -172,7 +173,7 @@ Search::Query::Dialect::DBIxClass - Search::Query dialect for simple DBIx::Class
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 
