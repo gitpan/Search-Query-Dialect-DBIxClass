@@ -1,12 +1,8 @@
 package Search::Query::Dialect::DBIxClass;
-{
-  $Search::Query::Dialect::DBIxClass::VERSION = '0.004';
-}
-
+$Search::Query::Dialect::DBIxClass::VERSION = '0.005';
 # ABSTRACT: Search::Query dialect for simple DBIx::Class query generation
-use strict;
-use warnings;
-use base qw( Search::Query::Dialect::Native );
+use Moo;
+extends 'Search::Query::Dialect::Native';
 
 my %negated_prefix = (
     '+' => '-',
@@ -30,10 +26,8 @@ my %negated_op = (
 %negated_op = ( %negated_op, reverse %negated_op );
 
 
-sub init {
+sub BUILD {
     my $self = shift;
-
-    $self->SUPER::init(@_);
 
     my $op_regex = $self->parser->{op_regex};
     $self->parser->{op_regex} = qr/$op_regex|!#/;
@@ -167,13 +161,15 @@ __END__
 
 =pod
 
+=encoding UTF-8
+
 =head1 NAME
 
 Search::Query::Dialect::DBIxClass - Search::Query dialect for simple DBIx::Class query generation
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
@@ -189,13 +185,13 @@ version 0.004
 
 =head1 DESCRIPTION
 
-    Search::Query::Dialect::DBIxClass extends L<Search::Query::Dialect::Native>
-    by an as_dbic_query method that returns a hashref that can be passed to
-    L<DBIx::Class::ResultSet/search>.
+Search::Query::Dialect::DBIxClass extends L<Search::Query::Dialect::Native>
+by an as_dbic_query method that returns a hashref that can be passed to
+L<DBIx::Class::ResultSet/search>.
 
 =head1 METHODS
 
-=head2 init
+=head2 BUILD
 
 Overrides base method and sets DBIx::Class-appropriate defaults.
 It adds '!#' to the op_regex which is the 'not in list of values' operator.
@@ -211,7 +207,7 @@ Alexander Hartmaier <abraxxa@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Alexander Hartmaier.
+This software is copyright (c) 2014 by Alexander Hartmaier.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
